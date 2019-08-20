@@ -21,8 +21,8 @@ class App extends React.Component{
           />
           <ActivityIndicator size='large' />
           <View style={styles.copyright} >
-                <Text style={styles.textcopyright}>SMA NEGERI 2 PRABUMULIH</Text>
-                <Text style = {styles.textcopyright}>Developer by Pabrik Coding</Text>
+                <Text style={styles.textcopyright}>SplashScreen</Text>
+                <Text style = {styles.textcopyright}>Developer by Wandi Pratama</Text>
           </View>
         </View>
       );
