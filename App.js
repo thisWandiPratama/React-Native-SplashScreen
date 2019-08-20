@@ -3,40 +3,43 @@ import { View , Image, StylesSheet} from 'react-native'
 
 class App extends React.Component{
     state={
-        position:true
+        role:true
     }
-    splash=()=>{
-        if (this.state.position){
-            return(
-                <View style={styles.MainContainer}>
-                    <Image
-                    source={require('./src/assets/logo.png')}
-                    style={styles.logoSplash}
-                    />
-                </View>
-            )
-        }
-    }
+   
     render(){
-        setTimeout(()=>{
-            this.setState({
-                position:false
-            })
-        } ,5000)
+          setTimeout(()=>{
+      this.setState({
+          role:false
+      })
+  } ,5000)
+    if (this.state.role) {
+      return (
+        <View style={styles.MainSplash}>
+          <Image
+                source={require('../../iconSMA.png')}
+                style={styles.logoSplash}
+          />
+          <ActivityIndicator size='large' />
+          <View style={styles.copyright} >
+                <Text style={styles.textcopyright}>SMA NEGERI 2 PRABUMULIH</Text>
+                <Text style = {styles.textcopyright}>Developer by Pabrik Coding</Text>
+          </View>
+        </View>
+      );
+      
+    }
         return(
             <View style={styles.ContainerView}>
-                {this.splash()}
+                <Text> Dashboard Aplikasi</Text>
             </View>
         )
     }
 }
 const styles = StyleSheet.create({
-  MainContainer:{
-    height:'100%', 
-    width:'100%', 
+ MainSplash:{
+    flex:1,
     justifyContent:'center', 
-    alignItems:'center', 
-    backgroundColor:'blue'
+    alignItems:'center'
   },
   
   ContainerView:{
